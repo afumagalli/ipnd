@@ -1,0 +1,142 @@
+body {
+	padding: 20px 10px;
+	font-family: Lucida;
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.6em;
+	background-color: #307699;
+}
+
+h1 {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+p {
+	margin: 10px 0;
+}
+
+.lesson {
+	background-color: #F08C35;
+	border-radius: 20px;
+	color: #3E313C;
+	padding: 10px;
+	margin: 0 auto 50px auto;
+	text-align: center;
+}
+
+h2 {
+	margin: 10px;
+}
+
+form {
+	display: block;
+	text-align: center;
+}
+
+blockquote {
+	margin: -20px 0px 20px 50px;
+}
+
+.concept {
+	background-color: #307699;
+	padding: 4px;
+	margin: 10px;
+	border-radius: 4px;
+	color: black;
+}
+
+.concept-title {
+	font-size: 1.6em;
+	margin: 8px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.concept-description {
+	font-weight: lighter;
+  	font-size: 1.2em;
+	margin: 6px;
+	color: #FFFFFF;
+	text-align: left;
+}
+
+.post {
+	color: white;
+}
+
+header {
+	text-align: center;
+}
+
+img {
+	margin: 40px 0px 0px 0px;
+	border: 7px solid white;
+	border-radius: 20px;
+}
+
+.map {
+	margin: 0 auto;
+	display: block;
+}
+
+ul {
+	padding: 0px 10px 0px 10px;
+}
+
+li {
+	display: inline;
+	margin: 0px 10px 0px 10px;
+}
+
+.item-title {
+	color: white;
+	text-decoration: none;
+}
+
+.section {
+	text-align: center;
+}
+
+.login {
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+
+.login-link {
+	color: white;
+	display: block;
+	text-align: center;
+}
+
+.feedback {
+	font-size: 40px
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+@media screen and (max-width:750px) {
+	body {
+		font-size : 16px;
+	}
+}
+
+@media screen and (max-width:580px) {
+	body {
+		font-size : 14px;
+	}
+}
+
+@media screen and (max-width:460px) {
+	body {
+		font-size : 12px;
+	}
+}
+
+input.submit {
+	margin: 10px auto;
+}
+

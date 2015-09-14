@@ -1,0 +1,50 @@
+
+{% autoescape true %}
+{% block content %}
+
+<h1 class="feedback" id="wall">
+	{% if prev == "None" %}
+		Give feedback here!
+	{% elif prev == "Success" %}
+		Thank you for your feedback!
+	{% else %}
+		There was an error posting your comment.
+	{% endif %}
+</h1>
+
+<form action="/sign?{{ sign_query_params }}" method="post">
+	<div>
+		<textarea name="content" rows="3" cols="60"></textarea>
+	</div>
+	<div>
+		<input type="submit" value="Post Comment">
+	</div>
+</form>
+
+<br>
+<div class="login">
+	Logged in as: <b>{{ user_name }}</b><br>
+</div>
+<a class ="login-link" href="{{ url|safe }}">{{ url_linktext }}</a>
+<br>
+
+{% if img_url %}
+	<img src="{{ img_url }}" alt="map of users" class="map">
+	<h1 class="feedback">Where commenters are from!</h2>
+	<br>
+{% endif %}
+
+<!-- user comments start here -->
+{% for post in posts %}
+	{% if user and user.user_id() == post.author.identity %}
+		<div class="post"> <h3>(You) {{ post.author.name }} </h3>
+	{% else %}
+		<div class="post"> <h3> {{ post.author.name }} </h3>
+	{% endif %}
+
+	<blockquote> {{ post.content }} </blockquote>
+	</div>
+{% endfor %}
+
+{% endblock %}
+{% endautoescape %}

@@ -1,0 +1,32 @@
+
+{% autoescape true %}
+{% block content %}
+
+Give feedback here!
+
+<form action="/sign?{{ sign_query_params }}" method="post">
+	<div>
+		<textarea name="content" rows="3" cols="60"></textarea>
+	</div>
+	<div>
+		<input type="submit" value="Post Comment">
+	</div>
+</form>
+
+<br>
+Logged in as: <strong>{{ user_name }}</strong><br>
+<a href="{{ url }}">{{ url_linktext }}</a>
+<!-- user comments start here -->
+{% for post in posts %}
+	{% if user and user.user_id() == post.author.identity %}
+		<div> <h3>(You) {{ post.author.name }} </h3>
+	{% else %}
+		<div> <h3> {{ post.author.name }} </h3>
+	{% endif %}
+
+	wrote: <blockquote> {{ post.content }} </blockquote>
+	</div>
+{% endfor %}
+
+{% endblock %}
+{% endautoescape %}

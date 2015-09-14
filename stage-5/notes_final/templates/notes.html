@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+	<img src="/images/anthony.jpg" alt="pic of me!" height="300" width="300">
+
+	<h1 class="title">Anthony's Notes</h1>
+
+	<ul>
+	{% for stage in stages %}
+		<li><a class="item-title" href="#stage-{{ loop.index }}">
+			Stage {{ loop.index }}</a></li>
+	{% endfor %}
+	</ul>
+
+</header>
+
+{% autoescape false %}
+{% for stage in stages %}
+<div class="stage">
+	<h1 id="stage-{{ loop.index}}">
+		{{ stage.title }}
+	</h1>
+
+	{% for lesson in stage.lessons %}
+	<div class="lesson">
+		<h2>
+			{{ lesson.title }}
+		</h2>
+
+		{% for concept in lesson.concepts %}
+		<div class="concept">
+			<div class="concept-title">
+				{{ concept.title }}
+			</div>
+			<div class="concept-description">
+				{{ concept.description }}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% endfor %}
+</div>
+{% endfor %}
+{% endautoescape %}
+
+{% endblock %}
